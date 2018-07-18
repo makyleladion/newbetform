@@ -1,0 +1,8 @@
+{
+  "name": "testbetform",
+  "app_id": "0100c37f",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
