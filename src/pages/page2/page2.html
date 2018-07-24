@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-buttons end>
+            <button ion-button icon-only>
+                <!-- Advanced: explicity set the icon for each platform -->
+                <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
+                <ion-badge item-end>2</ion-badge>
+            </button>
+        </ion-buttons>
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <div style="padding: 0px 16px 10px 16px;">
+            <ion-segment>
+                <ion-segment-button class="segment-activated" value="11am">
+                    11am
+                </ion-segment-button>
+                <ion-segment-button value="4pm">
+                    4pm
+                </ion-segment-button>
+                <ion-segment-button value="9pm">
+                    9pm
+                </ion-segment-button>
+            </ion-segment>
+        </div>
+
+        <div style="padding: 0px 16px 10px 16px;">
+            <ion-segment>
+                <ion-segment-button class="segment-activated" value="Straight">
+                    Straight
+                </ion-segment-button>
+                <ion-segment-button (click)="doRadio()" value="Ramble">
+                    Ramble
+                </ion-segment-button>
+            </ion-segment>
+        </div>
+
+        <h4 text-center style="margin:0 0 0 0px;">RAMBLE 1</h4>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6 class="bet_container">
+                    <ion-item [class.active]="focus === 'betNum'" (touchend)="setFocus('betNum')">
+                        <ion-label stacked>BET NUMBER</ion-label>
+                        <ion-input type="tel" maxlength="3" disabled [ngModel]="betNum"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6 class="bet_container">
+                    <ion-item [class.active]="focus === 'BetAmount'" (touchend)="setFocus('BetAmount')">
+                        <ion-label stacked>AMOUNT</ion-label>
+                        <ion-input type="tel" maxlength="3" disabled [ngModel]="BetAmount"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-list>
+
+</ion-content>
+
+<ion-digit-keyboard [align]="keyboardSettings.align" [width]="keyboardSettings.width" [visible]="keyboardSettings.visible" [leftActionOptions]="keyboardSettings.leftActionOptions" [rightActionOptions]="keyboardSettings.rightActionOptions" [roundButtons]="keyboardSettings.roundButtons" [showLetters]="keyboardSettings.showLetters" [swipeToHide]="keyboardSettings.swipeToHide" [theme]="keyboardSettings.theme"></ion-digit-keyboard>

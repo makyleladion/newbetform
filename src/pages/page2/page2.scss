@@ -1,0 +1,32 @@
+page-page2 {
+    ion-item {
+        border-right-color: #fff !important;
+        transition: border-width 250ms, background-color 1s !important;
+
+        &.active {
+            border-right: 10px solid #3782fe !important;
+            background-color: rgba(#3782fe, 0.05) !important;
+        }
+    }
+    .button-bar > .button{
+  border: 1px solid #cfcfcf;
+}
+
+.button-bar > .button:last-child {
+  border-radius: 0px 20px 20px 0px !important;
+}
+.button-bar > .button:first-child {
+    border-radius: 20px 0px 0px 20px !important;
+}
+ion-col.bet_container.col input {
+    font-size: 34px;
+    text-align: center;
+    font-weight: bold;
+}
+ion-col.bet_container.col ion-label {
+    text-align: center;
+}
+.list-md .item-input:last-child {
+    background: #d8d8d852;
+}
+}

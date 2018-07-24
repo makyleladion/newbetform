@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Page One</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h3>Ionic Menu Starter</h3>
+
+    <p>If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.</p>
+
+    <button ion-button secondary (click)="showKeyboard()">Show Keyboard</button>
+</ion-content>
+
+<ion-digit-keyboard
+    [align]="keyboardSettings.align"
+    [width]="keyboardSettings.width"
+    [visible]="keyboardSettings.visible"
+    [leftActionOptions]="keyboardSettings.leftActionOptions"
+    [rightActionOptions]="keyboardSettings.rightActionOptions"
+    [roundButtons]="keyboardSettings.roundButtons"
+    [showLetters]="keyboardSettings.showLetters"
+    [swipeToHide]="keyboardSettings.swipeToHide"
+    [theme]="keyboardSettings.theme"
+    (numberClick)="numberClick($event)"
+>
+    <ion-toolbar no-border-bottom>
+        <ion-buttons start>
+            <button ion-button (click)="hideKeyboard()">Cancel</button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button solid *ngIf="">Next</button>
+            <button ion-button (click)="hideKeyboard()">Done</button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-digit-keyboard>
